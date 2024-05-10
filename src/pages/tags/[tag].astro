@@ -1,0 +1,37 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "@layouts/Layout.astro";
+
+export async function getStaticPaths() {
+  const allProjects = await getCollection("blog");
+  const uniqueTags = [...new Set(allProjects.map((project) => project.data.tags).flat())];
+
+  return uniqueTags.map((tag) => {
+    const filteredProjects = allProjects.filter((project) => project.data.tags?.includes(tag));
+    return {
+      params: { tag },
+      props: { projects: filteredProjects },
+    };
+  });
+}
+
+const { tag } = Astro.params;
+const { projects } = Astro.props;
+---
+
+<Layout title={tag}>
+  <main class="p-4">
+    <h1>Posts tagged with {tag}</h1>
+    <ul>
+      {
+        projects.map((project) => (
+          <li>
+            <a class="underline" href={`/blog/${project.slug}`}>
+              {project.data.title}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </main>
+</Layout>

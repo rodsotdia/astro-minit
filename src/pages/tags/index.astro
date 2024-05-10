@@ -1,0 +1,24 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "@layouts/Layout.astro";
+
+const allPosts = await getCollection("blog");
+const tags = [...new Set(allPosts.map((project) => project.data.tags).flat())];
+---
+
+<Layout title="Tags">
+  <main class="p-4">
+    <h1>Tags</h1>
+    <div>
+      {
+        tags.map((tag) => (
+          <p>
+            <a class="underline" href={`/tags/${tag}`}>
+              {tag}
+            </a>
+          </p>
+        ))
+      }
+    </div>
+  </main>
+</Layout>
