@@ -1,6 +1,7 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import Hero from "@components/Hero.astro";
+import Counter from "@components/Counter";
 ---
 
 <Layout title="Home">
@@ -8,5 +9,7 @@ import Hero from "@components/Hero.astro";
     <h1 class="text-3xl">Hola!</h1>
 
     <Hero title="Welcome" body="Lorem ipsum dolor asimet." />
+
+    <Counter client:load number={2} />
   </main>
 </Layout>
