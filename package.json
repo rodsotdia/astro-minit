@@ -1,0 +1,44 @@
+{
+  "name": "astro-minit",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "A personal and minimal Astro boilerplate to initialize any project from scratch.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rodsotdia/astro-minit.git"
+  },
+  "author": "Rod Sot",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rodsotdia/astro-minit/issues"
+  },
+  "homepage": "https://github.com/rodsotdia/astro-minit#readme",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "format": "prettier --write \"src/**/*.{astro,html,js,jsx,md,mdx,ts,tsx,css,scss}\""
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^2.3.1",
+    "@astrojs/react": "^3.3.2",
+    "@astrojs/tailwind": "^5.1.0",
+    "astro": "^4.7.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tailwindcss": "^3.4.3"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.1",
+    "@types/react-dom": "^18.3.0",
+    "autoprefixer": "^10.4.19",
+    "eslint": "^9.2.0",
+    "eslint-plugin-astro": "^1.1.2",
+    "prettier": "^3.2.5",
+    "prettier-plugin-astro": "^0.13.0",
+    "prettier-plugin-tailwindcss": "^0.5.14",
+    "sass": "^1.77.0"
+  }
+}
