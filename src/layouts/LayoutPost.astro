@@ -1,0 +1,25 @@
+---
+import Layout from "@layouts/Layout.astro";
+
+const { frontmatter } = Astro.props;
+---
+
+<Layout title={frontmatter.title}>
+  <main class="p-4">
+    <p>
+      This was published on {frontmatter.pubDate.toString().slice(0, 10)}
+    </p>
+    <ul class="mb-8 mt-2">
+      {
+        frontmatter.tags.map((tag) => (
+          <p class="tag">
+            <a class="underline" href={`/tags/${tag}`}>
+              {tag}
+            </a>
+          </p>
+        ))
+      }
+    </ul>
+    <slot />
+  </main>
+</Layout>

@@ -1,0 +1,27 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "@layouts/Layout.astro";
+import Hero from "@components/Hero.astro";
+
+const allPosts = await getCollection("blog");
+
+const pageTitle = "Blog";
+---
+
+<Layout title={pageTitle}>
+  <main class="p-4">
+    <h1 class="text-6xl">{pageTitle}</h1>
+    <Hero title="Welcome" body="This is the blog" />
+    <ul>
+      {
+        allPosts.map((post) => (
+          <li>
+            <a class="underline" href={`/blog/${post.slug}`}>
+              {post.data.title}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </main>
+</Layout>
