@@ -1,0 +1,49 @@
+/*----------------------
+Responsive Breakpoints
+------------------------*/
+$bp-360: 360;
+$bp-380: 380;
+$bp-440: 440;
+$bp-640: 640;
+$bp-800: 800;
+$bp-1024: 1024;
+$bp-1280: 1280;
+$bp-1366: 1366;
+$bp-1536: 1536;
+
+/*----------------------
+Responsive Mixins
+------------------------*/
+@mixin breakpoint-below($breakpoint) {
+  @media only screen and (max-width: #{$breakpoint}px) {
+    @content;
+  }
+}
+@mixin breakpoint-above($breakpoint) {
+  @media only screen and (min-width: #{$breakpoint}px) {
+    @content;
+  }
+}
+@mixin breakpoint-between($breakpoint_1, $breakpoint_2) {
+  @media only screen and (min-width: #{$breakpoint_1}px) and (max-width: #{$breakpoint_2}px) {
+    @content;
+  }
+}
+
+/*----------------------
+Animations Mixin
+------------------------*/
+@mixin keyframes($animationName) {
+  @keyframes #{$animationName} {
+    @content;
+  }
+}
+@mixin animate($name, $duration, $iteration, $direction, $ease, $delay, $fill) {
+  animation-name: $name;
+  animation-duration: $duration;
+  animation-iteration-count: $iteration;
+  animation-direction: $direction;
+  animation-timing-function: $ease;
+  animation-delay: $delay;
+  animation-fill-mode: $fill;
+}

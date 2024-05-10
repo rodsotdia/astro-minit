@@ -1,0 +1,30 @@
+/*----------------------
+Colors / Sizes
+------------------------*/
+:root {
+  // Color Palette
+  --theme-white: hsl(0, 0%, 100%);
+  --theme-black: hsl(0, 0%, 0%);
+
+  // Spacing
+  --page-horizontal-margin: 2rem;
+
+  // Wrapper sizes
+  --xlarge-wrapper-size: 1400px;
+  --large-wrapper-size: 1250px;
+  --main-wrapper-size: 1180px;
+  --medium-large-wrapper-size: 950px;
+  --medium-wrapper-size: 750px;
+  --medium-small-wrapper-size: 520px;
+  --small-wrapper-size: 380px;
+}
+
+$theme-white: hsl(0, 0%, 100%);
+$theme-black: hsl(0, 0%, 0%);
+
+/*----------------------
+Easings
+------------------------*/
+$timing-cubicbezier-1: cubic-bezier(0.17, 0.87, 0.3, 0.87);
+$timing-cubicbezier-2: cubic-bezier(0.06, 0.73, 0.08, 1);
+$timing-cubicbezier-3: cubic-bezier(0.26, 1.04, 0.74, 0.96);
